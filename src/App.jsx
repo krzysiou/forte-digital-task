@@ -1,7 +1,7 @@
-import "./App.css";
-import EditIntern from "./EditIntern";
-import InternList from "./InternList";
-import { Routes, Route } from "react-router-dom";
+import './App.css'
+import EditIntern from './EditIntern'
+import InternList from './InternList'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<InternList />} />
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
