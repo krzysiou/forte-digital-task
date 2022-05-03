@@ -29,7 +29,6 @@
             "no-multiple-empty-lines": ["warn", { "max": 1 }],
             "brace-style": "warn",
             "space-infix-ops": ["warn", { "int32Hint": false }],
-            "no-console" : "warn",
             "object-curly-newline" : "warn"
         }
     },

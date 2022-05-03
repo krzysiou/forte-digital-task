@@ -40,41 +40,6 @@ function validateInputs(intern){
   return schema.validate(intern, { abortEarly: false })
 }
 
-// set ocurring errors
-function handleError(error, setNameError, setEmailError, setInternshipStartError, setInternshipEndError){
-  const errorArray = error.split('. ')
-  for(const errorMessage of errorArray){
-    const key = errorMessage.split(' ')[0]
-    const spaceIndex = errorMessage.indexOf(' ')
-    const message = errorMessage.substring(spaceIndex + 1)
-
-    switch(key){
-    case 'name':
-      setNameError(message)
-      break
-    case 'email':
-      setEmailError(message)
-      break
-    case 'internshipStart':
-      setInternshipStartError(message)
-      break
-    case 'internshipEnd':
-      setInternshipEndError(message)
-      break
-    default:
-      break
-    }
-  }
-}
-
-// set errors to undefined
-function clearErrors(setNameError, setEmailError, setInternshipStartError, setInternshipEndError){
-  setNameError()
-  setEmailError()
-  setInternshipStartError()
-  setInternshipEndError()
-}
-
 // EditIntern component
 const EditIntern = () => {
 
@@ -111,10 +76,37 @@ const EditIntern = () => {
 
   // on submit check validation, if valid send request, if not valid handle errors
   const handleSubmit = (event) => {
+    // set ocurring errors
+    const handleError = (error) => {
+      const errorArray = error.split('. ')
+      for(const errorMessage of errorArray){
+        const key = errorMessage.split(' ')[0]
+        const spaceIndex = errorMessage.indexOf(' ')
+        const message = errorMessage.substring(spaceIndex + 1)
+
+        switch(key){
+        case 'name':
+          setNameError(message)
+          break
+        case 'email':
+          setEmailError(message)
+          break
+        case 'internshipStart':
+          setInternshipStartError(message)
+          break
+        case 'internshipEnd':
+          setInternshipEndError(message)
+          break
+        default:
+          break
+        }
+      }
+    }
+    
     event.preventDefault()
     const { error } = validateInputs(intern)
     if(error){
-      handleError(error.message, setNameError, setEmailError, setInternshipStartError, setInternshipEndError)
+      handleError(error.message)
     } else {
       axios.put(`http://localhost:3001/interns/${id}`, {
         ...intern,
@@ -122,7 +114,10 @@ const EditIntern = () => {
         internshipEnd: localDateToISOString(intern.internshipEnd)
       })
         .then(response => {
-          clearErrors(setNameError, setEmailError, setInternshipStartError, setInternshipEndError)
+          setNameError()
+          setEmailError()
+          setInternshipStartError()
+          setInternshipEndError()
         })
         .catch(error => {
           console.log(error)
