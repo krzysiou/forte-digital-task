@@ -5,85 +5,98 @@
   top: 0%;
   bottom: 0%;
   margin: 40px;
-  color: #222222;
 }
 
-.content {
-  color: #222222;
+.outer-container {
+  width: 656px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   padding: 40px 80px 80px;
-  width: 656px;
   margin: 0 auto;
   margin-top: 136px;
   background: #F7F7F7;
-  box-sizing: border-box;
+  color: #222222;
+  font-family: 'Roboto';
+  font-style: normal;
 }
 
-.heading-label {
-  font-weight: 6  00;
+.outer-container-label {
+  width: 100%;
+  font-weight: 600;
   font-size: 40px;
   line-height: 47px;
-  width: 100%;
-  text-align: left;
   margin-top: 0;
   margin-bottom: 40px;
+  text-align: left;
 }
 
-.list {
+.intern-list-container {
+  width: 496px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  width: 496px;
   margin: 0 auto;
 }
 
-.list>div:nth-child(odd){
+.intern-list-container>div:nth-child(odd){
   background: #EDEDED;
  }
- .list>div:nth-child(even){
+ .intern-list-container>div:nth-child(even){
   background: #F2F2F2;
  }
 
-.list-element {       
+.intern-list-element {       
+  width: 100%;
+  height: 64px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 6px 24px;
-  box-sizing: border-box;
-  border: 2px solid transparent;
 }
 
-.list-element:hover {
-  border: 2px solid #222222;
+.intern-list-element:hover {
+  box-shadow: inset 0 0 0 2px #222222;
   background: #F7F7F7 !important;
 }
 
-.name-label {
+.intern-name-label {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   margin: 12px 0;
 }
 
-.edit {
+.edit-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 12px 0px;
+  text-decoration: none;
 }
 
-.edit-label {
+.edit-button:hover .edit-button-icon, .edit-button:hover .edit-button-label {
+  filter: invert(40%);
+}
+
+.edit-button-icon {
+  display: block;
+  transition: 200ms;
+}
+
+.edit-button-label {
   margin: 0;
   margin-right: -4px;
   margin-left: 10px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  transition: 200ms;
+  color: #222222;
 }

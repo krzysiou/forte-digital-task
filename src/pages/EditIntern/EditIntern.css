@@ -1,0 +1,198 @@
+.logo-icon {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  margin: 40px;
+}
+
+.back-button-container {
+  font-family: 'Roboto';
+  font-style: normal;
+  margin: 0 auto;
+  margin-top: 52px;
+  display: flex;
+  width: 656px;
+  align-items: flex-start;
+}
+
+.back-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  color: #222222;
+}
+
+.back-button:hover .back-button-label, .back-button:hover .back-button-icon {
+  filter: invert(40%);
+}
+
+.back-button-icon {
+  display: block;
+  transition: 200ms;
+}
+
+.back-button-label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  margin-left: 12px;
+  transition: 200ms;
+}
+
+.container {
+  font-family: 'Roboto';
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 80px;
+  width: 656px;
+  margin: 0 auto;
+  margin-top: 60px;
+  box-sizing: border-box;
+  background: #F7F7F7;
+}
+
+.container-label {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 47px;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+}
+
+.form {
+  width: 100%;
+}
+
+.form-input-container {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-input-label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #222222;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.form-input-field {
+  box-sizing: border-box;
+  height: 48px;
+  border: 1px solid #222222;
+  padding: 12px 16px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #F7F7F7;
+}
+
+.form-input-field:focus {
+  outline: none !important;
+  box-shadow: inset 0 0 0 1px #222222, 0px 0px 0px 2px #D3F2FF;
+}
+
+.form-date-outer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-date-inner-container {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+
+.form-date-input-field {
+  font-family: 'Roboto';
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0px 0px 0px 16px;
+}
+
+.form-date-input-field::-webkit-calendar-picker-indicator {
+  border-left: 1px solid #222222;
+  padding: 15px;
+  display: block;
+  background: url('../../assets/indicatorIcon.svg')  50% 50% no-repeat;
+}
+
+.form-date-input-field:focus::-webkit-calendar-picker-indicator {
+  border-left: 2px solid #222222;
+}
+
+
+.form-button-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.form-submit {
+  width: 224px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 40px;
+  background: #222222;
+  border-radius: none;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  transition: 200ms;
+}
+
+.form-submit:hover {
+  background-color: #424242;
+}
+
+.error-icon {
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 22px;
+  top : 39%;
+  left: 92%;
+}
+
+.error-message{
+  margin: 0;
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #A3270C;
+  text-align: left;
+}
+
+.form-date-error-icon {
+  position: absolute;
+  display: block;
+  width: 22px;
+  height: 22px;
+  top : 39%;
+  left: 64%;
+}
